@@ -19,8 +19,8 @@ export class MainView extends LitElement {
   @property({ type: Object }) location = router.location;
 
   @property({ type: Array }) menuTabs: MenuTab[] = [
-    {route: 'settings', name: 'Settings'},
-    {route: 'posts', name: 'Posts'},
+    { route: 'settings', name: 'Settings' },
+    { route: 'posts', name: 'Posts' },
   ];
 
   @property({ type: String }) projectName = '';
@@ -119,11 +119,18 @@ export class MainView extends LitElement {
             <span>${this.projectName}</span>
           </div>
           <hr />
-          <vaadin-tabs orientation="vertical" theme="minimal" id="tabs" .selected="${this.getIndexOfSelectedTab()}">
+          <vaadin-tabs
+            orientation="vertical"
+            theme="minimal"
+            id="tabs"
+            .selected="${this.getIndexOfSelectedTab()}"
+          >
             ${this.menuTabs.map(
               (menuTab) => html`
                 <vaadin-tab>
-                  <a href="${router.urlForPath(menuTab.route)}" tabindex="-1">${menuTab.name}</a>
+                  <a href="${router.urlForPath(menuTab.route)}" tabindex="-1"
+                    >${menuTab.name}</a
+                  >
                 </vaadin-tab>
               `
             )}
@@ -141,13 +148,19 @@ export class MainView extends LitElement {
 
   connectedCallback() {
     super.connectedCallback();
-    window.addEventListener('vaadin-router-location-changed', this._routerLocationChanged);
+    window.addEventListener(
+      'vaadin-router-location-changed',
+      this._routerLocationChanged
+    );
     this.projectName = 'VaadinPress';
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
-    window.removeEventListener('vaadin-router-location-changed', this._routerLocationChanged);
+    window.removeEventListener(
+      'vaadin-router-location-changed',
+      this._routerLocationChanged
+    );
   }
 
   private isCurrentLocation(route: string): boolean {
@@ -155,7 +168,9 @@ export class MainView extends LitElement {
   }
 
   private getIndexOfSelectedTab(): number {
-    const index = this.menuTabs.findIndex((menuTab) => this.isCurrentLocation(menuTab.route));
+    const index = this.menuTabs.findIndex((menuTab) =>
+      this.isCurrentLocation(menuTab.route)
+    );
 
     // Select first tab if there is no tab for home in the menu
     if (index === -1 && this.isCurrentLocation('')) {
@@ -166,7 +181,9 @@ export class MainView extends LitElement {
   }
 
   private getSelectedTabName(menuTabs: MenuTab[]): string {
-    const currentTab = menuTabs.find((menuTab) => this.isCurrentLocation(menuTab.route));
+    const currentTab = menuTabs.find((menuTab) =>
+      this.isCurrentLocation(menuTab.route)
+    );
     let tabName = '';
     if (currentTab) {
       tabName = currentTab.name;

@@ -10,14 +10,8 @@
     "noImplicitReturns": true,
     "noImplicitAny": true,
     "noImplicitThis": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
     "experimentalDecorators": true
   },
-  "include": [
-    "frontend/**/*.ts",
-    "frontend/index.js",
-    "types.d.ts"
-  ],
+  "include": ["frontend/**/*.ts", "frontend/index.js", "types.d.ts"],
   "exclude": []
 }
