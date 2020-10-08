@@ -10,7 +10,8 @@
     "noImplicitReturns": true,
     "noImplicitAny": true,
     "noImplicitThis": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "allowSyntheticDefaultImports": true
   },
   "include": ["frontend/**/*.ts", "frontend/index.js", "types.d.ts"],
   "exclude": []

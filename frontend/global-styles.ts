@@ -7,19 +7,25 @@ $_documentContainer.innerHTML = `
 <custom-style>
   <style>
     html {
-      --lumo-border-radius: 0px;
+      --lumo-border-radius: 0;
     }
   </style>
 </custom-style>
 
+<dom-module id="text-field-style" theme-for="vaadin-text-field">
+  <template>
+    <style>[part="input-field"]{box-shadow:inset 0 0 0 1px var(--lumo-contrast-30pct);background-color:var(--lumo-base-color);}:host([invalid]) [part="input-field"]{box-shadow:inset 0 0 0 1px var(--lumo-error-color);}
+    </style>
+  </template>
+</dom-module>
 
-<custom-style>
-  <style>
-    html {
-      overflow:hidden;
-    }
-  </style>
-</custom-style>
+<dom-module id="text-area-style" theme-for="vaadin-text-area">
+  <template>
+    <style>[part="input-field"]{box-shadow:inset 0 0 0 1px var(--lumo-contrast-30pct);background-color:var(--lumo-base-color);}:host([invalid]) [part="input-field"]{box-shadow:inset 0 0 0 1px var(--lumo-error-color);}
+    </style>
+  </template>
+</dom-module>
+
 
 <dom-module id="app-layout" theme-for="vaadin-app-layout">
   <template>

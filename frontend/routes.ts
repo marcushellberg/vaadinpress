@@ -1,36 +1,25 @@
-import { Router } from '@vaadin/router';
+import { Route, Router } from '@vaadin/router';
 
-const routes = [
+import './views/list-view';
+import './views/post-view';
+import './views/admin/admin-view';
+import './views/admin/posts/posts-view';
+import './views/admin/posts/post-edit-view';
+import './views/admin/settings/settings-view';
+
+const routes: Route[] = [
   {
     path: 'admin',
-    component: 'main-view',
-    action: async () => {
-      await import('./views/main/main-view');
-    },
+    component: 'admin-view',
     children: [
-      {
-        path: '',
-        component: 'settings-view',
-        action: async () => {
-          await import('./views/settings/settings-view');
-        },
-      },
-      {
-        path: 'settings',
-        component: 'settings-view',
-        action: async () => {
-          await import('./views/settings/settings-view');
-        },
-      },
-      {
-        path: 'posts',
-        component: 'posts-view',
-        action: async () => {
-          await import('./views/posts/posts-view');
-        },
-      },
+      { path: '/', component: 'settings-view' },
+      { path: '/settings', component: 'settings-view' },
+      { path: '/posts', component: 'posts-view' },
+      { path: '/posts/:postId', component: 'post-edit-view' },
     ],
   },
+  { path: '/:slug', component: 'post-view' },
+  { path: '/', component: 'list-view' },
 ];
 
 export const router = new Router(document.querySelector('#outlet'));

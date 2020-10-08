@@ -1,0 +1,38 @@
+:host {
+  display: block;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+a {
+  color: var(--lumo-primary-text-color);
+  text-decoration: none;
+}
+
+.container {
+  width: 700px;
+  margin: 0 auto var(--lumo-space-xl);
+}
+
+@media (max-width: 700px) {
+  .container {
+    width: 500px;
+  }
+}
+
+@media (max-width: 500px) {
+  .container {
+    width: 350px;
+  }
+  #banner {
+    padding: 50px 0;
+  }
+}

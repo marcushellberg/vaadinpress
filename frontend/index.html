@@ -5,14 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>VaadinPress</title>
     <style>
+      @import url('https://fonts.googleapis.com/css?family=Lora:400,400i,700|Montserrat:300,300i,400,700');
+
+      html {
+        overflow: scroll;
+      }
+
       body {
         margin: 0;
         width: 100vw;
-        height: 100vh;
+        min-height: 100vh;
+        font-family: 'Lora', serif;
+        color: #494949;
+        font-size: 20px;
+        line-height: 1.6;
       }
 
       #outlet {
-        height: 100%;
+        min-height: 100%;
       }
     </style>
     <custom-style>

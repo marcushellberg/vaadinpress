@@ -1,8 +1,14 @@
 package com.vaadin.demo.vaadinpress.model;
 
+import java.time.LocalDateTime;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
+import javax.validation.constraints.NotBlank;
+
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import lombok.Data;
@@ -16,7 +22,17 @@ import lombok.RequiredArgsConstructor;
 public class Post {
   @EqualsAndHashCode.Include
   private String id;
+  @NotBlank
   private String author;
+  @NotBlank
+  private String title;
+  @NotBlank
+  @Indexed(unique = true)
+  private String slug;
+  @NotBlank
   private String content;
+  private LocalDateTime published;
+  private Set<String> tags = new HashSet<>();
+
   private List<Comment> comments = new LinkedList<>();
 }
