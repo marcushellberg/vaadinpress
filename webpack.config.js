@@ -19,18 +19,18 @@ flowDefaults.module.rules = flowDefaults.module.rules.filter(
 );
 const merged = merge(flowDefaults, {
   module: {
-    rules: [
-      {
-        test: /\.css$/i,
-        use: ['lit-css-loader', 'extract-loader', 'css-loader'],
-      },
-      {
-        test: /\.(png|svg|jpe?g|gif)$/,
-        use: [
-          'file-loader',
-        ],
-      },
+rules: [
+  {
+    test: /\.css$/i,
+    use: ['lit-css-loader', 'extract-loader', 'css-loader'],
+  },
+  {
+    test: /\.(png|svg|jpe?g|gif)$/,
+    use: [
+      'file-loader',
     ],
+  },
+],
   },
 });
 console.log(merged.module.rules);

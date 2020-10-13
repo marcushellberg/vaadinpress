@@ -27,7 +27,7 @@ export class PostEditView extends LitElement implements BeforeEnterObserver {
     this.binder.for(this.binder.model.slug).addValidator({
       message: 'The slug has to be unique',
       validate: async(slug: string) => {
-        return await isSlugUnique(slug);
+        return await isSlugUnique(slug, this.binder.value.id);
       }
     });
   }

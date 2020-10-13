@@ -32,8 +32,9 @@ public class PostsEndpoint {
     return repo.findBySlug(slug).orElseThrow();
   }
 
-  public boolean isSlugUnique(String slug) {
-    return !repo.findBySlug(slug).isPresent();
+  public boolean isSlugUnique(String slug, String postId) {
+    var post = repo.findBySlug(slug).orElse(null);
+    return post == null || post.getId().equals(postId);
   }
 
   public Post savePost(Post post) {
