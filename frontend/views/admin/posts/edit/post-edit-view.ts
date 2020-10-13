@@ -12,7 +12,7 @@ import '@vaadin/vaadin-text-field/vaadin-text-area';
 import '@vaadin/vaadin-button';
 import { Binder, field } from '@vaadin/form';
 import PostModel from '../../../../generated/com/vaadin/demo/vaadinpress/model/PostModel';
-import { findPost, savePost } from '../../../../generated/PostsEndpoint';
+import { findPost, isSlugUnique, savePost } from '../../../../generated/PostsEndpoint';
 
 import styles from './post-edit-view.css';
 
@@ -22,6 +22,15 @@ export class PostEditView extends LitElement implements BeforeEnterObserver {
   private message = '';
   private binder = new Binder(this, PostModel);
 
+  constructor(){
+    super();
+    this.binder.for(this.binder.model.slug).addValidator({
+      message: 'The slug has to be unique',
+      validate: async(slug: string) => {
+        return await isSlugUnique(slug);
+      }
+    });
+  }
   
   render() {
     const { model } = this.binder;
