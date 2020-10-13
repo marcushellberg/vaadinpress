@@ -61,6 +61,7 @@
     "copy-webpack-plugin": "5.1.1",
     "css-loader": "^4.3.0",
     "extract-loader": "^5.1.0",
+    "file-loader": "^6.1.1",
     "html-webpack-plugin": "3.2.0",
     "lit-css-loader": "0.0.4",
     "lit-element": "2.3.1",
@@ -69,6 +70,7 @@
     "raw-loader": "4.0.0",
     "script-ext-html-webpack-plugin": "2.1.4",
     "terser": "4.6.7",
+    "to-string-loader": "^1.1.6",
     "typescript": "3.8.3",
     "validator": "12.0.0",
     "webpack": "4.42.0",
@@ -147,6 +149,6 @@
       "lit-html": "1.2.1",
       "@types/validator": "10.11.3"
     },
-    "hash": "c9be9b0ae29ed43559298a63af69d899d31aec71dd429eedf0b4493b47b970f5"
+    "hash": "420e77729839e5d9fb613041d99c6f9eca07537ae9464f1146765f1900b716ea"
   }
 }

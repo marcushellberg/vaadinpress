@@ -1,0 +1,47 @@
+:host {
+  display: block;
+}
+
+#banner {
+  background-image: url('../../images/banner.jpg');
+  background-size: cover;
+  padding: 120px 0px;
+  color: white;
+}
+
+#banner h1 {
+  font-size: 38px;
+  color: hotpink;
+}
+
+#banner p {
+  font-style: italic;
+  font-weight: lighter;
+  font-size: 30px;
+  opacity: 0.8;
+}
+
+#banner h1,
+#banner p {
+  background: rgba(0, 0, 0, 0.8);
+  padding: 12px;
+  display: table;
+}
+
+.author {
+  font-size: 0.8em;
+  font-style: italic;
+}
+
+footer {
+  padding: var(--lumo-space-l);
+  text-align: center;
+}
+
+.intro {
+  font-size: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

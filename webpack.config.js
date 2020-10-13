@@ -22,7 +22,13 @@ const merged = merge(flowDefaults, {
     rules: [
       {
         test: /\.css$/i,
-        use: ['lit-css-loader'],
+        use: ['lit-css-loader', 'extract-loader', 'css-loader'],
+      },
+      {
+        test: /\.(png|svg|jpe?g|gif)$/,
+        use: [
+          'file-loader',
+        ],
       },
     ],
   },

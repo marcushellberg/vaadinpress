@@ -13,6 +13,7 @@ import { findAllPosts } from '../../../generated/PostsEndpoint';
 import { Router } from '@vaadin/router';
 import { GridItemModel } from '@vaadin/vaadin-grid';
 import { format } from 'date-fns';
+import styles from './posts-view.css';
 
 @customElement('posts-view')
 export class PostsView extends LitElement {
@@ -61,24 +62,5 @@ export class PostsView extends LitElement {
     Router.go('admin/posts/new');
   }
 
-  static styles = css`
-    :host {
-      display: block;
-      padding: var(--lumo-space-m) var(--lumo-space-l);
-    }
-
-    .content {
-      display: grid;
-      gap: var(--lumo-space-m);
-      justify-items: end;
-    }
-
-    .create-post-button {
-      min-width: calc(var(--lumo-button-size) * 4);
-    }
-
-    vaadin-grid {
-      width: 100%;
-    }
-  `;
+  static styles = styles;
 }

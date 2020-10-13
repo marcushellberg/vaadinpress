@@ -5,11 +5,12 @@ import {
   customElement,
   internalProperty,
 } from 'lit-element';
-import { getBlog } from '../generated/BlogEndpoint';
-import Blog from '../generated/com/vaadin/demo/vaadinpress/model/Blog';
-import Post from '../generated/com/vaadin/demo/vaadinpress/model/Post';
-import { findAllPosts } from '../generated/PostsEndpoint';
-import sharedStyles from './shared-styles.css';
+import { getBlog } from '../../generated/BlogEndpoint';
+import Blog from '../../generated/com/vaadin/demo/vaadinpress/model/Blog';
+import Post from '../../generated/com/vaadin/demo/vaadinpress/model/Post';
+import { findAllPosts } from '../../generated/PostsEndpoint';
+import sharedStyles from '../shared-styles.css';
+import styles from './list-view.css';
 import marked from 'marked';
 import { formatRelative } from 'date-fns';
 
@@ -49,10 +50,20 @@ export class ListView extends LitElement {
       `;
     } else {
       return html`
-        <div class="container">
-          <blockquote class="intro">
-            <i>Building complex forms is fun</i><br />&ndash;Nobody, ever
-          </blockquote>
+        <div class="intro">
+          <h1>Building forms is fun!</h1>
+          <ol>
+            <li>Create a model</li>
+            <li>Define validations</li>
+            <li>Create input fields and buttons</li>
+            <li>Bind model to fields</li>
+            <li>Validate as user is typing</li>
+            <li>Validate before submit</li>
+            <li>Send model to server</li>
+            <li>Validate again</li>
+          </ol>
+
+          <a href="/admin">Let's begin...</a>
         </div>
       `;
     }
@@ -76,49 +87,6 @@ export class ListView extends LitElement {
 
   static styles = [
     sharedStyles,
-    css`
-      :host {
-        display: block;
-      }
-
-      #banner {
-        background-image: url('https://picsum.photos/1000/500');
-        background-size: cover;
-        padding: 120px 0px;
-        color: white;
-      }
-
-      #banner h1 {
-        font-size: 38px;
-      }
-
-      #banner p {
-        font-style: italic;
-        font-weight: lighter;
-        font-size: 30px;
-        opacity: 0.8;
-      }
-
-      #banner h1,
-      #banner p {
-        background: rgba(0, 0, 0, 0.8);
-        padding: 12px;
-        display: table;
-      }
-
-      .author {
-        font-size: 0.8em;
-        font-style: italic;
-      }
-
-      footer {
-        padding: var(--lumo-space-l);
-        text-align: center;
-      }
-
-      .intro {
-        font-size: 4rem;
-      }
-    `,
+    styles
   ];
 }

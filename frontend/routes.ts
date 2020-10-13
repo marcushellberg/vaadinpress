@@ -1,10 +1,10 @@
 import { Route, Router } from '@vaadin/router';
 
-import './views/list-view';
-import './views/post-view';
+import './views/list/list-view';
+import './views/post/post-view';
 import './views/admin/admin-view';
 import './views/admin/posts/posts-view';
-import './views/admin/posts/post-edit-view';
+import './views/admin/posts/edit/post-edit-view';
 import './views/admin/settings/settings-view';
 
 const routes: Route[] = [

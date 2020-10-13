@@ -32,6 +32,10 @@ public class PostsEndpoint {
     return repo.findBySlug(slug).orElseThrow();
   }
 
+  public boolean isSlugUnique(String slug) {
+    return !repo.findBySlug(slug).isPresent();
+  }
+
   public Post savePost(Post post) {
     post.setPublished(LocalDateTime.now());
     return repo.save(post);

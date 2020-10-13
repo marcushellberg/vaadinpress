@@ -13,6 +13,7 @@ import lombok.EqualsAndHashCode;
 public class Blog {
   @EqualsAndHashCode.Include
   private String id;
+
   @NotBlank
   private String name;
   @NotBlank

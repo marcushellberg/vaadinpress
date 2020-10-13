@@ -1,0 +1,52 @@
+:host {
+  display: block;
+}
+
+header {
+  padding: var(--lumo-space-l);
+}
+
+header .logo,
+header .logo:hover,
+header .logo:visited,
+header .logo:active {
+  color: hotpink;
+  font-size: 1.8rem;
+  padding: var(--lumo-space-m);
+  background: rgba(0, 0, 0, 0.8);
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+  margin-top: calc(2 * var(--lumo-space-l));
+}
+
+.comments {
+  padding: calc(2 * var(--lumo-space-xl)) 0;
+}
+
+.comment {
+  display: grid;
+  gap: var(--lumo-space-m);
+  margin: var(--lumo-space-m) 0 var(--lumo-space-xl);
+}
+
+.comment .author {
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.comment-form {
+  display: grid;
+  width: 400px;
+}
+
+.comment-form vaadin-text-area {
+  height: 200px;
+}
+
+.comment-form vaadin-button {
+  width: 200px;
+  margin-top: var(--lumo-space-xl);
+}

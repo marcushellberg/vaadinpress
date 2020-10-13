@@ -1,0 +1,14 @@
+:host {
+  display: block;
+  padding: var(--lumo-space-m) var(--lumo-space-l);
+}
+
+.form {
+  display: grid;
+  gap: var(--lumo-space-m);
+}
+
+vaadin-rich-text-editor,
+.buttons {
+  margin-top: var(--lumo-space-m);
+}

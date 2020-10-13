@@ -1,0 +1,13 @@
+:host {
+  display: block;
+  padding: var(--lumo-space-m) var(--lumo-space-l);
+}
+
+.form {
+  display: grid;
+  width: 300px;
+}
+
+.save-button {
+  margin-top: var(--lumo-space-m);
+}

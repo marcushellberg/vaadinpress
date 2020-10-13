@@ -1,7 +1,6 @@
 import {
   LitElement,
   html,
-  css,
   customElement,
   internalProperty,
 } from 'lit-element';
@@ -9,6 +8,8 @@ import { getBlog, saveBlog } from '../../../generated/BlogEndpoint';
 
 import '@vaadin/vaadin-text-field';
 import '@vaadin/vaadin-button';
+
+import styles from './settings-view.css';
 
 import { Binder, field } from '@vaadin/form';
 import BlogModel from '../../../generated/com/vaadin/demo/vaadinpress/model/BlogModel';
@@ -65,19 +66,5 @@ export class SettingsView extends LitElement {
     }
   }
 
-  static styles = css`
-    :host {
-      display: block;
-      padding: var(--lumo-space-m) var(--lumo-space-l);
-    }
-
-    .form {
-      display: grid;
-      width: 300px;
-    }
-
-    .save-button {
-      margin-top: var(--lumo-space-m);
-    }
-  `;
+  static styles = styles;
 }

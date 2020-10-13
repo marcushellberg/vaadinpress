@@ -11,14 +11,18 @@ import '@vaadin/vaadin-text-field';
 import '@vaadin/vaadin-text-field/vaadin-text-area';
 import '@vaadin/vaadin-button';
 import { Binder, field } from '@vaadin/form';
-import PostModel from '../../../generated/com/vaadin/demo/vaadinpress/model/PostModel';
-import { findPost, savePost } from '../../../generated/PostsEndpoint';
+import PostModel from '../../../../generated/com/vaadin/demo/vaadinpress/model/PostModel';
+import { findPost, savePost } from '../../../../generated/PostsEndpoint';
+
+import styles from './post-edit-view.css';
 
 @customElement('post-edit-view')
 export class PostEditView extends LitElement implements BeforeEnterObserver {
   @internalProperty()
   private message = '';
   private binder = new Binder(this, PostModel);
+
+  
   render() {
     const { model } = this.binder;
     return html`
@@ -60,7 +64,10 @@ export class PostEditView extends LitElement implements BeforeEnterObserver {
   titleToSlug() {
     this.binder.value.slug = this.binder.value.title
       .toLowerCase()
-      .replace(/[\W!?]/gi, '-');
+      .replace(/[\W!?]/gi, '-')
+      .replace(/^-+|-+$/g, '');
+    
+      this.requestUpdate();
   }
 
   async save() {
@@ -77,20 +84,5 @@ export class PostEditView extends LitElement implements BeforeEnterObserver {
     }
   }
 
-  static styles = css`
-    :host {
-      display: block;
-      padding: var(--lumo-space-m) var(--lumo-space-l);
-    }
-
-    .form {
-      display: grid;
-      gap: var(--lumo-space-m);
-    }
-
-    vaadin-rich-text-editor,
-    .buttons {
-      margin-top: var(--lumo-space-m);
-    }
-  `;
+  static styles = styles;
 }

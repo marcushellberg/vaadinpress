@@ -22,6 +22,7 @@ import lombok.RequiredArgsConstructor;
 public class Post {
   @EqualsAndHashCode.Include
   private String id;
+
   @NotBlank
   private String author;
   @NotBlank

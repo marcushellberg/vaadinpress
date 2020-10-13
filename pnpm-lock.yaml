@@ -57,6 +57,7 @@ devDependencies:
   copy-webpack-plugin: 5.1.1_webpack@4.42.0
   css-loader: 4.3.0_webpack@4.42.0
   extract-loader: 5.1.0
+  file-loader: 6.1.1_webpack@4.42.0
   html-webpack-plugin: 3.2.0_webpack@4.42.0
   lit-css-loader: 0.0.4
   lit-html: 1.2.1
@@ -64,6 +65,7 @@ devDependencies:
   raw-loader: 4.0.0_webpack@4.42.0
   script-ext-html-webpack-plugin: 2.1.4_f9f57bd8a148b6edc3192202e3fa66cb
   terser: 4.6.7
+  to-string-loader: 1.1.6
   typescript: 3.8.3
   validator: 12.0.0
   webpack: 4.42.0_webpack@4.42.0
@@ -3847,6 +3849,18 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha1-OrGi0qYsi/tDGgyUy3l6L84nyWI=
+  /file-loader/6.1.1_webpack@4.42.0:
+    dependencies:
+      loader-utils: 2.0.0
+      schema-utils: 3.0.0
+      webpack: 4.42.0_webpack@4.42.0
+    dev: true
+    engines:
+      node: '>= 10.13.0'
+    peerDependencies:
+      webpack: ^4.0.0 || ^5.0.0
+    resolution:
+      integrity: sha512-Klt8C4BjWSXYQAfhpYYkG4qHNTna4toMHEbWrI5IuVoxbU6uiDKeKAP99R8mmbJi3lvewn/jQBOgU4+NS3tDQw==
   /fill-range/4.0.0:
     dependencies:
       extend-shallow: 2.0.1
@@ -6384,6 +6398,16 @@ packages:
       node: '>= 8.9.0'
     resolution:
       integrity: sha512-SHiNtMOUGWBQJwzISiVYKu82GiV4QYGePp3odlY1tuKO7gPtphAT5R/py0fA6xtbgLL/RvtJZnU9b8s0F1q0Xg==
+  /schema-utils/3.0.0:
+    dependencies:
+      '@types/json-schema': 7.0.6
+      ajv: 6.12.5
+      ajv-keywords: 3.5.2_ajv@6.12.5
+    dev: true
+    engines:
+      node: '>= 10.13.0'
+    resolution:
+      integrity: sha512-6D82/xSzO094ajanoOSbe4YvXWMfn2A//8Y1+MUqFAJul5Bs+yn36xbK9OtNDcRVSBJ9jjeoXftM6CfztsjOAA==
   /script-ext-html-webpack-plugin/2.1.4_f9f57bd8a148b6edc3192202e3fa66cb:
     dependencies:
       debug: 4.1.1
@@ -6969,6 +6993,12 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-FWtleNAtZ/Ki2qtqej2CXTOayOH9bHDQF+Q48VpWyDXjbYxA4Yz8iDB31zXOBUlOHHKidDbqGVrTUvQMPmBGBw==
+  /to-string-loader/1.1.6:
+    dependencies:
+      loader-utils: 1.4.0
+    dev: true
+    resolution:
+      integrity: sha512-VNg62//PS1WfNwrK3n7t6wtK5Vdtx/qeYLLEioW46VMlYUwAYT6wnfB+OwS2FMTCalIHu0tk79D3RXX8ttmZTQ==
   /toidentifier/1.0.0:
     dev: true
     engines:
@@ -7563,6 +7593,7 @@ specifiers:
   css-loader: ^4.3.0
   date-fns: ^2.16.1
   extract-loader: ^5.1.0
+  file-loader: ^6.1.1
   html-webpack-plugin: 3.2.0
   lit-css-loader: 0.0.4
   lit-element: 2.3.1
@@ -7573,6 +7604,7 @@ specifiers:
   raw-loader: 4.0.0
   script-ext-html-webpack-plugin: 2.1.4
   terser: 4.6.7
+  to-string-loader: ^1.1.6
   typescript: 3.8.3
   validator: 12.0.0
   webpack: 4.42.0
