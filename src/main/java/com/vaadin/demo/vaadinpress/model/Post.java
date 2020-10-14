@@ -1,10 +1,8 @@
 package com.vaadin.demo.vaadinpress.model;
 
 import java.time.LocalDateTime;
-import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Set;
 
 import javax.validation.constraints.NotBlank;
 
@@ -33,7 +31,6 @@ public class Post {
   @NotBlank
   private String content;
   private LocalDateTime published;
-  private Set<String> tags = new HashSet<>();
 
   private List<Comment> comments = new LinkedList<>();
 }
